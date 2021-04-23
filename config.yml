@@ -1,11 +1,1 @@
-setup:
-  addons:
-    - plan: heroku-postgresql
-      as: DATABASE
-build:
-  docker:
-    web: mymeds/Dockerfile
-release:
-  image: web
-  command:
-    - ./test.sh
+echo "hehe"
