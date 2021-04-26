@@ -1,8 +1,4 @@
-build:
-  docker:
-    web: Dockerfile
-    worker: worker/Dockerfile
-release:
-  image: worker
-  command:
-    - ./test.sh
+language: bash
+
+script:
+    - bash ./test.sh
