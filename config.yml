@@ -1,11 +1,20 @@
-setup:
-  addons:
-    - plan: heroku-postgresql
-      as: DATABASE
+# setup:
+#   addons:
+#     - plan: heroku-postgresql
+#       as: DATABASE
+# build:
+#   docker:
+#     web: mymeds/Dockerfile
+# release:
+#   image: web
+#   command:
+#     - ./test.sh
+
 build:
   docker:
-    web: mymeds/Dockerfile
+    web: Dockerfile
+    worker: worker/Dockerfile
 release:
-  image: web
+  image: worker
   command:
     - ./test.sh
