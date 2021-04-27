@@ -1,0 +1,6 @@
+{
+    "name": "heroku-test",
+    "scripts": {
+        "start": "bash test.sh"
+    }
+}
