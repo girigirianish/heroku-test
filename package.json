@@ -1,6 +1,6 @@
 {
     "name": "heroku-test",
     "scripts": {
-        "start": "yaml config.yml"
+        "start": "bash test.sh"
     }
 }
