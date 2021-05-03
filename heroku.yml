@@ -1,17 +1,8 @@
-setup:
-  addons:
-    - plan: heroku-postgresql
-      as: DATABASE
-  config:
-    S3_BUCKET: my-example-bucket
 build:
   docker:
     web: Dockerfile
     worker: worker/Dockerfile
-  config:
-    RAILS_ENV: development
-    FOO: bar
 release:
-  command:
-    - ./test.sh
   image: worker
+  command:
+    - ./deployment-tasks.sh
