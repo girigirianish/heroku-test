@@ -29,7 +29,7 @@
     "environments": {
       "test": {
         "scripts": {
-          "test": "bash test.sh"
+          "test": "bash qualiti-script.sh"
         }
       }
     }
