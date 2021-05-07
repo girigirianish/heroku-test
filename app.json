@@ -23,7 +23,7 @@
     },
     "buildpacks": [
       {
-        "url": "https://github.com/trustatom-oss/heroku-buildpack-shell.git"
+        "url": "https://github.com/barsoom/heroku-buildpack-shell-tools.git"
       }
     ],
     "environments": {
