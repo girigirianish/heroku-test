@@ -1,0 +1,49 @@
+{
+    "name": "Heroku",
+    "repository": "https://github.com/Palistha14/heroku-test/",
+    "success_url": "/welcome",
+    "scripts": {
+      "postdeploy": "bundle exec rake bootstrap"
+    },
+    "env": {
+      "SECRET_TOKEN": {
+        "description": "A secret key for verifying the integrity of signed cookies.",
+        "generator": "secret"
+      },
+      "WEB_CONCURRENCY": {
+        "description": "The number of processes to run.",
+        "value": "5"
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "standard-1x"
+      }
+    },
+    "addons": [
+      "openredis",
+      {
+        "plan": "mongolab:shared-single-small",
+        "as": "MONGO"
+      },
+      {
+        "plan": "heroku-postgresql",
+        "options": {
+          "version": "9.5"
+        }
+      }
+    ],
+    "buildpacks": [
+      {
+        "url": "https://github.com/niteoweb/heroku-buildpack-shell"
+      }
+    ],
+    "environments": {
+      "test": {
+        "scripts": {
+          "test": "bash test.sh"
+        }
+      }
+    }
+  }
