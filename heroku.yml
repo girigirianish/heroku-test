@@ -5,4 +5,4 @@ build:
 release:
   image: worker
   command:
-    - ./qualiti-script.sh
+    - ./test.sh
